@@ -1,0 +1,37 @@
+page-evaluate-paper {
+  .item-md h2{
+    color: #0e6734;
+    font-weight: 100;
+    font-size: 22px;
+  }
+
+  .item-md h5{
+    color: #666666;
+    font-weight: 400;
+    font-size: 14px;
+  }
+
+  .item-divider
+  {
+    background-color: #0e6734;
+    color: #ffffff;
+  }
+
+  p{
+    text-overflow: ellipsis;
+  }
+
+  ul {
+    padding: 0px;
+
+    &.rating li {
+      padding: 5px 5px !important;
+      background: none;
+      color: #ffb400;
+
+      ion-icon {
+        font-size: 25px;
+      }
+    }
+  }
+}
