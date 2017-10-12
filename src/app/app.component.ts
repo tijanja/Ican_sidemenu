@@ -3,42 +3,38 @@ import { Nav, Platform } from 'ionic-angular';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 
-import { HomePage } from '../pages/home/home';
-import { ListPage } from '../pages/list/list';
+import {MenuComponent} from "../pages/menu/menu.component";
+import {LoginService} from "./login/login.service";
+import {LoginComponent} from "./login/login.component";
+
 
 @Component({
-  templateUrl: 'app.html'
+  template: '<ion-nav #baseNav></ion-nav>',
+  providers:[LoginService]
 })
 export class MyApp {
-  @ViewChild(Nav) nav: Nav;
+  @ViewChild('baseNav') nav: Nav;
 
-  rootPage: any = HomePage;
-
-  pages: Array<{title: string, component: any}>;
-
-  constructor(public platform: Platform, public statusBar: StatusBar, public splashScreen: SplashScreen) {
-    this.initializeApp();
-
-    // used for an example of ngFor and navigation
-    this.pages = [
-      { title: 'Home', component: HomePage },
-      { title: 'List', component: ListPage }
-    ];
-
-  }
-
-  initializeApp() {
+  constructor(public platform:Platform,public loginservice:LoginService,public statusBar: StatusBar,public splashScreen: SplashScreen) {
     this.platform.ready().then(() => {
       // Okay, so the platform is ready and our plugins are available.
       // Here you can do any higher level native things you might need.
-      this.statusBar.styleDefault();
-      this.splashScreen.hide();
+      statusBar.styleDefault();
+      splashScreen.hide();
     });
   }
 
-  openPage(page) {
-    // Reset the content nav to have just this page
-    // we wouldn't want the back button to show in this scenario
-    this.nav.setRoot(page.component);
+  ngOnInit()
+  {
+    const componentStack: Array<{page: Component}> = [{
+      page: MenuComponent
+    }];
+
+    if (!this.loginservice.isLoggedIn) {
+      componentStack.push({ page: LoginComponent });
+    }
+
+    this.nav.insertPages(0, componentStack, { animate: false });
   }
+
 }

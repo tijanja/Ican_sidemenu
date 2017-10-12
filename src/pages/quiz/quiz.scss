@@ -1,3 +1,26 @@
 page-quiz {
+  .ican-btn
+  {
+    background-color: #ededed;
+    border: 1px solid #0e6734;
+  }
 
+  .answer
+  {
+    font-size: 40px;
+    color: #012126;
+  }
+
+  .quiz-board
+  {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 16px;
+    padding-right: 40px;
+    background-color: #ededed;
+    font-size: 35px;
+    color: #0e6734;
+    text-align: right;
+    font-weight: 100;
+  }
 }

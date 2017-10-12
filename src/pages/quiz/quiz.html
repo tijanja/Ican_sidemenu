@@ -21,7 +21,8 @@
   <div class="container" padding><h1>{{seminalQuestion}}</h1></div>
 
   <ion-list padding>
-    <ion-item class="answer" *ngFor="let answer of question.choiceAnserList[questionNumber]" (click)="getUpdate($event,answer,seminalQuestion)"><h3>{{answer}}</h3></ion-item>
+    <!--<ion-item class="answer" *ngFor="let answer of question.choiceAnserList[questionNumber]" (click)="getUpdate($event,answer,seminalQuestion)"><h3>{{answer}}</h3></ion-item>-->
+    <ion-item class="answer" *ngFor="let answer of option" (click)="getUpdate($event,answer,seminalQuestion)"><h3>{{answer}}</h3></ion-item>
   </ion-list>
 
 </ion-content>

@@ -3,7 +3,7 @@ import { Http, Headers } from '@angular/http';
 import 'rxjs/add/operator/map';
 import {Observable} from "rxjs/Observable";
 
-let apiUrl = 'http://104.198.10.84/api/';
+let apiUrl = 'http://34.241.5.192/api/';
 
 @Injectable()
 export class AuthService {
@@ -20,11 +20,14 @@ export class AuthService {
       //this.remoteCall = this.http.post(apiUrl, JSON.stringify(credentials));
       this.remoteCall.subscribe(data =>
         {
-          resolve(data);
-          console.log('my data: ', data);
+          let a = data.json();
+          resolve(a.data);
+
+          //console.log(data);
         },
         (err) =>
         {
+          console.log(err);
           reject(err);
         });
     });
@@ -58,4 +61,32 @@ export class AuthService {
     });
   }
 
+  getQuestion(memberid)
+  {
+    return new Promise((resolve, reject)=>{
+
+      let headers = new Headers();
+      headers.append('Content-Type', 'application/json');
+
+      this.remoteCall= this.http.post(apiUrl,JSON.stringify(memberid),{headers: headers});
+      this.remoteCall.subscribe(data=>{
+          resolve(data.json());
+      },
+        (err)=>{
+          reject(err);
+        });
+
+    });
+  }
+
+  uploadAnswer(answers)
+  {
+    return new Promise((resolve,reject)=>{
+      let headers = new Headers();
+      headers.append('Content-Type', 'application/json');
+      this.remoteCall= this.http.post(apiUrl,JSON.stringify(answers),{headers: headers});
+      this.remoteCall.subscribe(data=>{resolve(data.json)},(err)=>{reject(err)});
+
+    });
+  }
 }

@@ -1,9 +1,23 @@
 <ion-menu [content]="content">
 
   <ion-content class="menuBg">
-    <ion-avatar>
-      <img src="assets/user.png">
-    </ion-avatar>
+    <ion-row>
+      <ion-col col-4>
+        <ion-avatar>
+          <img src="assets/user.png">
+
+        </ion-avatar>
+      </ion-col>
+      <ion-col col-8 class="member-profile">
+        <ion-row>
+          <label><h4>{{lname}}</h4></label>
+        </ion-row>
+        <ion-row>
+          <label>{{fname}}</label>
+        </ion-row>
+      </ion-col>
+    </ion-row>
+
     <ion-list style="background-color: #013116">
       <button class="menuBg" menuClose ion-item *ngFor="let p of pages" (click)="openPage(p)">
         <ion-icon name="{{p.icon}}"></ion-icon> {{p.title}}
