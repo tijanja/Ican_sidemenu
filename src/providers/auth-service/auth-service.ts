@@ -39,7 +39,7 @@ export class AuthService {
       headers.append('Content-Type', 'application/json');
 
       this.http.post(apiUrl+'guest/signup', JSON.stringify(data), {headers: headers})
-        .subscribe(res => {
+        .subscribe((res) => {
           resolve(res.json());
         }, (err) => {
           reject(err);
@@ -69,7 +69,8 @@ export class AuthService {
       headers.append('Content-Type', 'application/json');
 
       this.remoteCall= this.http.post(apiUrl,JSON.stringify(memberid),{headers: headers});
-      this.remoteCall.subscribe(data=>{
+      this.remoteCall.subscribe((data)=>{
+        //console.log(data);
           resolve(data.json());
       },
         (err)=>{
@@ -85,7 +86,16 @@ export class AuthService {
       let headers = new Headers();
       headers.append('Content-Type', 'application/json');
       this.remoteCall= this.http.post(apiUrl,JSON.stringify(answers),{headers: headers});
-      this.remoteCall.subscribe(data=>{resolve(data.json)},(err)=>{reject(err)});
+
+      this.remoteCall.subscribe(
+        (data)=>
+        {
+          resolve(data.json())
+        },
+        (err)=>
+        {
+          reject(err)
+        });
 
     });
   }

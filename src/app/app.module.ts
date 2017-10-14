@@ -44,7 +44,7 @@ import {EvaluatePaperPageModule} from "../pages/evaluate-paper/evaluate-paper.mo
 import {PictureBlogPageModule} from "../pages/picture-blog/picture-blog.module";
 import {QuizPageModule} from "../pages/quiz/quiz.module";
 import {SponsorsPageModule} from "../pages/sponsors/sponsors.module";
-import {PipesModule} from "../pipes/pipes.module";
+import {FCM} from "@ionic-native/fcm";
 
 
 //import {Geolocation} from "@ionic-native/geolocation";
@@ -55,7 +55,6 @@ import {PipesModule} from "../pipes/pipes.module";
     HomePage,
     ListPage,
     MenuComponent
-
   ],
   imports: [
     BrowserModule,
@@ -94,6 +93,7 @@ import {PipesModule} from "../pipes/pipes.module";
     Geolocation,
     GoogleMaps,
     YoutubeVideoPlayer,
+    FCM,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     AuthService
   ]
