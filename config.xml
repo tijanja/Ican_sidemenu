@@ -95,5 +95,8 @@
     <allow-navigation href="http://169.254.80.80:8100" />
     <engine name="windows" spec="~5.0.0" />
     <engine name="android" spec="~6.1.2" />
+    <plugin name="cordova-android-play-services-gradle-release" spec="~1.1.1">
+        <variable name="PLAY_SERVICES_VERSION" value="11.+" />
+    </plugin>
     <plugin name="cordova-plugin-fcm" spec="~2.1.2" />
 </widget>
