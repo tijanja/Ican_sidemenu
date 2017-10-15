@@ -7,7 +7,6 @@ import {MenuComponent} from "../pages/menu/menu.component";
 import {LoginService} from "./login/login.service";
 import {LoginComponent} from "./login/login.component";
 
-
 @Component({
   template: '<ion-nav #baseNav></ion-nav>',
   providers:[LoginService]
@@ -21,6 +20,7 @@ export class MyApp {
       // Here you can do any higher level native things you might need.
       statusBar.styleDefault();
       splashScreen.hide();
+
     });
   }
 

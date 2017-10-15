@@ -78,16 +78,9 @@
     </platform>
     <allow-navigation href="http://192.168.1.4:8102" />
     <allow-navigation href="http://169.254.80.80:8100" />
-    <engine name="android" spec="^6.2.3" />
     <engine name="ios" spec="^4.5.1" />
     <engine name="windows" spec="^5.0.0" />
     <plugin name="cordova-plugin-youtube-video-player" spec="^1.0.6" />
-    <plugin name="cordova-plugin-googlemaps" spec="^2.0.11">
-        <variable name="API_KEY_FOR_ANDROID" value="AIzaSyB2EMvluyKVWo4bcsqrfmYKh7xQCMosE_8" />
-        <variable name="API_KEY_FOR_IOS" value="AIzaSyDb51gkqY0MklUHbMFe13f20kFFhMf0Cwo" />
-        <variable name="LOCATION_WHEN_IN_USE_DESCRIPTION" value="Show your location on the map" />
-        <variable name="LOCATION_ALWAYS_USAGE_DESCRIPTION" value="Trace your location on the map" />
-    </plugin>
     <plugin name="cordova-plugin-geofence" spec="^0.7.0">
         <variable name="GEOFENCE_ALWAYS_USAGE_DESCRIPTION" value="${EXECUTABLE_NAME} Would Like to Use Your Current Location Even In Background." />
         <variable name="GEOFENCE_IN_USE_USAGE_DESCRIPTION" value="${EXECUTABLE_NAME} Would Like to Use Your Current Location When In Use." />
@@ -105,4 +98,9 @@
         <variable name="PLAY_SERVICES_VERSION" value="11.+" />
     </plugin>
     <plugin name="cordova-plugin-fcm" spec="^2.1.2" />
+    <plugin name="cordova-plugin-googlemaps" spec="~2.0.11">
+        <variable name="API_KEY_FOR_ANDROID" value="'AIzaSyA1evzZcK1SHuE2ZyAfPKKmP5UhwXmyi84'" />
+        <variable name="API_KEY_FOR_IOS" value="'AIzaSyCrgGi2546zX_0x0pg8p483mzZqXAc-4XM'" />
+    </plugin>
+    <engine name="android" spec="~6.1.2" />
 </widget>
