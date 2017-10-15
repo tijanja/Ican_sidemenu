@@ -2,6 +2,7 @@ import {Component, ElementRef, EventEmitter, Input, OnInit, Output, ViewChild} f
 import {IonicPage, LoadingController, NavController, NavParams, ToastController} from 'ionic-angular';
 import {Question} from "./question";
 import {AuthService} from "../../providers/auth-service/auth-service";
+import { AlertController } from 'ionic-angular';
 
 /**
  * Generated class for the QuizPage page.
@@ -45,7 +46,7 @@ export class QuizPage implements OnInit {
   data: any;
   option: any;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, elementRef: ElementRef, public authService: AuthService, public loadingCtrl: LoadingController, public toastCtrl: ToastController) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, elementRef: ElementRef, public authService: AuthService, public loadingCtrl: LoadingController, public toastCtrl: ToastController,public alertCtrl: AlertController) {
 
     this.getQuestion();
 
@@ -89,7 +90,8 @@ export class QuizPage implements OnInit {
         }
         else
         {
-          alert(this.data.data.message);
+          this.presentAlert("Alert!",this.data.data.message);
+
         }
 
 
@@ -136,7 +138,7 @@ export class QuizPage implements OnInit {
     }
     else
     {
-      alert(question.data.message);
+      this.presentAlert("Alert!",question.data.message);
     }
 
   }
@@ -161,5 +163,14 @@ export class QuizPage implements OnInit {
       position: 'bottom',
       dismissOnPageChange: true
     });
+  }
+
+  presentAlert(title: string, message: string) {
+    const alert = this.alertCtrl.create({
+      title: title,
+      subTitle: message,
+      buttons: ['Dismiss']
+    });
+    alert.present();
   }
 }
