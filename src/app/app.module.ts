@@ -45,6 +45,8 @@ import {PictureBlogPageModule} from "../pages/picture-blog/picture-blog.module";
 import {QuizPageModule} from "../pages/quiz/quiz.module";
 import {SponsorsPageModule} from "../pages/sponsors/sponsors.module";
 import {FCM} from "@ionic-native/fcm";
+import {PlenaryViewPageModule} from "../pages/plenary-view/plenary-view.module";
+import {PlenaryViewPage} from "../pages/plenary-view/plenary-view";
 
 
 //import {Geolocation} from "@ionic-native/geolocation";
@@ -68,7 +70,8 @@ import {FCM} from "@ionic-native/fcm";
     EvaluatePaperPageModule,
     PictureBlogPageModule,
     QuizPageModule,
-    SponsorsPageModule
+    SponsorsPageModule,
+    PlenaryViewPageModule
 
   ],
   bootstrap: [IonicApp],
@@ -84,7 +87,8 @@ import {FCM} from "@ionic-native/fcm";
     SponsorsPage,
     AttendancePage,
     EvaluatePaperPage,
-    EvaluateEventPage
+    EvaluateEventPage,
+    PlenaryViewPage
   ],
   providers: [
     StatusBar,

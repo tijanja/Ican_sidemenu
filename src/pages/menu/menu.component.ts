@@ -43,14 +43,14 @@ export class MenuComponent {
     this.pages = [
       { title: 'Welcome', component: HomePage,icon:'film' },
       { title: 'Conference Papers', component: ConferencePapersPage ,icon:'paper'},
-      { title: 'Quiz', component:  QuizPage,icon:'school'},
-      { title: 'Attendance', component:  AttendancePage,icon:'pin'},
-      { title: 'Conference Tv', component: ConferenceTvPage,icon:'desktop'},
-      { title: 'Sponsors', component: SponsorsPage,icon:'people'},
       { title: 'Evaluate Papers', component:  EvaluatePaperPage,icon:'star'},
-      { title: 'Evaluate This Conference', component:  EvaluateEventPage,icon:'star'}
-
-
+      { title: 'Conference Tv', component: ConferenceTvPage,icon:'desktop'},
+      { title: 'Conference Quiz', component:  QuizPage,icon:'school'},
+      { title: 'Sponsors', component: SponsorsPage,icon:'people'},
+      { title: 'Officers & Council Members', component:  EvaluateEventPage,icon:'star'},
+      { title: 'Past Presidents', component:  AttendancePage,icon:'pin'},
+      { title: 'Conference Committee', component:  AttendancePage,icon:'pin'},
+      { title: 'Program at a glance', component:  AttendancePage,icon:'pin'}
     ];
 
   }

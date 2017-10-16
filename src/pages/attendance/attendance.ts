@@ -39,7 +39,7 @@ export class AttendancePage {
   constructor(public navCtrl: NavController, public navParams: NavParams,private googleMaps: GoogleMaps,public geofence: Geofence,private geolocation: Geolocation,private platform: Platform)
   {
     this.geofence.initialize().then(()=>this.addGeoFence(),(err)=>console.log(err));
-    //this.getUserLocation(geolocation,platform);
+    this.getUserLocation(geolocation,platform);
   }
 
   ionViewDidLoad() {
@@ -106,10 +106,10 @@ export class AttendancePage {
     });
   }
 
-  addGeoFence()
+  private addGeoFence()
   {
     let fence={
-      id:'011680-akinde-ican-adetunji-project',
+      id:'011680-akinde-ican-47-project',
       latitude: 6.5918133,
       longitude:3.3081222,
       radius:100,
