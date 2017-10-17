@@ -12,6 +12,9 @@ import {AttendancePage} from "../attendance/attendance";
 import {ListPage} from "../list/list";
 import {EvaluatePaperPage} from "../evaluate-paper/evaluate-paper";
 import {EvaluateEventPage} from "../evaluate-event/evaluate-event";
+import {CommitteeListPage} from "../committee-list/committee-list";
+import {PastPresidentPage} from "../past-president/past-president";
+import {OfficersPage} from "../officers/officers";
 
 @Component({
   templateUrl: 'menu.html'
@@ -47,10 +50,9 @@ export class MenuComponent {
       { title: 'Conference Tv', component: ConferenceTvPage,icon:'desktop'},
       { title: 'Conference Quiz', component:  QuizPage,icon:'school'},
       { title: 'Sponsors', component: SponsorsPage,icon:'people'},
-      { title: 'Officers & Council Members', component:  EvaluateEventPage,icon:'star'},
-      { title: 'Past Presidents', component:  AttendancePage,icon:'pin'},
-      { title: 'Conference Committee', component:  AttendancePage,icon:'pin'},
-      { title: 'Program at a glance', component:  AttendancePage,icon:'pin'}
+      { title: 'Officers & Council Members', component:  OfficersPage,icon:'star'},
+      { title: 'Past Presidents', component:  PastPresidentPage,icon:'pin'},
+      { title: 'Conference Committee', component:  CommitteeListPage,icon:'pin'}
     ];
 
   }

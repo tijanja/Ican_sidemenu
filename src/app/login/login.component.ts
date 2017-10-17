@@ -50,6 +50,8 @@ export class LoginComponent {
     {
       this.presentAlert("Login Error", "Invalid login details");
     }
+
+    //this.navCtrl.pop();
   }
 
   showLoader(){

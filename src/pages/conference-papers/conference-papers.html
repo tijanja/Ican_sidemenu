@@ -19,7 +19,7 @@
 <ion-content>
 
   <ion-item-group>
-    <ion-item-divider color="light">PLENARY SESSION PAPERS</ion-item-divider>
+    <ion-item-divider color="light"><ion-icon name="paper"></ion-icon> PLENARY SESSION PAPERS</ion-item-divider>
     <ion-item text-wrap>
       <button ion-item (click)="akinde(0)">
         <ion-row>
@@ -37,19 +37,19 @@
           <h2>PLENARY 2</h2>
         </ion-row>
         <ion-row text-wrap>
-            <p>ICAN Accountability Index Reforming Public Finance Management for the Future</p>
+          <p>ICAN Accountability Index Reforming Public Finance Management for the Future</p>
         </ion-row>
-        <ion-row>
-          <ion-avatar item-end>
-            <img src="assets/2.png">
-          </ion-avatar>
-          <ion-avatar item-right>
-            <img src="assets/2.png">
-          </ion-avatar>
-          <ion-avatar item-right>
-            <img src="assets/2.png">
-          </ion-avatar>
-        </ion-row>
+        <!--<ion-row>-->
+          <!--<ion-avatar item-end>-->
+            <!--<img src="assets/2.png">-->
+          <!--</ion-avatar>-->
+          <!--<ion-avatar item-right>-->
+            <!--<img src="assets/2.png">-->
+          <!--</ion-avatar>-->
+          <!--<ion-avatar item-right>-->
+            <!--<img src="assets/2.png">-->
+          <!--</ion-avatar>-->
+        <!--</ion-row>-->
       </button>
     </ion-item>
 
@@ -88,37 +88,71 @@
         </button>
       </ion-item>
 
+    <ion-item>
+      <button ion-item (click)="akinde(5)">
+        <ion-row>
+          <h2>PLENARY 6</h2>
+        </ion-row>
+        <ion-row>
+          <h2>YOUNG PROFESSIONALS: EMERGING LEADERS OF CHANGE AND NATION BUILDING</h2>
+        </ion-row>
+      </button>
+    </ion-item>
+
   </ion-item-group>
 
 
   <ion-item-group>
     <ion-item-divider color="light">
-      WORKSHOP PAPERS</ion-item-divider>
+      <ion-icon name="paper"></ion-icon> WORKSHOP PAPERS</ion-item-divider>
     <ion-item>
-      <ion-avatar item-start>
-        <!--<img src="assets/avatar-ts-woody.png">-->
-      </ion-avatar>
-      <h2>Integrated Reporting</h2><h5>The Future of Corporate Reporting</h5></ion-item>
+      <button ion-item (click)="akinde(6)">
+        <ion-row>
+          <h2>Workshop 1</h2>
+        </ion-row>
+        <ion-row text-wrap="">
+          <h5>Integrated Reporting: The Future of Corporate Reporting</h5>
+        </ion-row>
+      </button>
+    </ion-item>
+
     <ion-item>
-      <ion-avatar item-start>
-        <!--<img src="assets/avatar-ts-woody.png">-->
-      </ion-avatar>
-      <h2>Islamic Finance</h2> <h5>Global Trends and Potentials for Chartered Accountants</h5></ion-item>
+      <button ion-item (click)="akinde(7)">
+        <ion-row>
+          <h2>Workshop 2</h2>
+        </ion-row>
+        <ion-row text-wrap="">
+          <h2>Islamic Finance</h2> <h5>Global Trends and Potentials for Chartered Accountants</h5>
+        </ion-row>
+      </button>
+
+    </ion-item>
+
+
     <ion-item>
-      <ion-avatar item-start>
-        <!--<img src="assets/avatar-ts-woody.png">-->
-      </ion-avatar>
-      <h2>Cyber Security</h2> <h5>What Chartered Accountants Need to Know</h5></ion-item>
+      <button ion-item (click)="akinde(8)">
+        <ion-row>
+          <h2>Workshop 3</h2>
+        </ion-row>
+        <ion-row text-wrap>
+          <h2>Cyber Security</h2> <h5>What Chartered Accountants Need to Know</h5>
+        </ion-row>
+      </button>
+
+    </ion-item>
+
     <ion-item>
-      <ion-avatar item-start>
-        <!--<img src="assets/avatar-ts-woody.png">-->
-      </ion-avatar>
-      <h2>Technological Disruptions & their Impact on the Accounting Profession</h2></ion-item>
-    <ion-item>
-      <ion-avatar item-start>
-        <!--<img src="assets/avatar-ts-woody.png">-->
-      </ion-avatar>
-      <h2>Young Professionals</h2><h5> Emerging Leaders of Change and Nation Building</h5></ion-item>
+      <button ion-item (click)="akinde(9)">
+        <ion-row>
+          <h2>Workshop 4</h2>
+        </ion-row>
+        <ion-row text-wrap="">
+          <h2>Technological Disruptions & their Impact on the Accounting Profession</h2>
+        </ion-row>
+      </button>
+
+    </ion-item>
+
   </ion-item-group>
 
   <!--<ion-list no-border>

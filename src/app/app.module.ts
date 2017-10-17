@@ -47,6 +47,12 @@ import {SponsorsPageModule} from "../pages/sponsors/sponsors.module";
 import {FCM} from "@ionic-native/fcm";
 import {PlenaryViewPageModule} from "../pages/plenary-view/plenary-view.module";
 import {PlenaryViewPage} from "../pages/plenary-view/plenary-view";
+import {CommitteeListPage} from "../pages/committee-list/committee-list";
+import {CommitteeListPageModule} from "../pages/committee-list/committee-list.module";
+import {PastPresidentPage} from "../pages/past-president/past-president";
+import {OfficersPage} from "../pages/officers/officers";
+import {PastPresidentPageModule} from "../pages/past-president/past-president.module";
+import {OfficersPageModule} from "../pages/officers/officers.module";
 
 
 //import {Geolocation} from "@ionic-native/geolocation";
@@ -71,7 +77,10 @@ import {PlenaryViewPage} from "../pages/plenary-view/plenary-view";
     PictureBlogPageModule,
     QuizPageModule,
     SponsorsPageModule,
-    PlenaryViewPageModule
+    PlenaryViewPageModule,
+    CommitteeListPageModule,
+    PastPresidentPageModule,
+    OfficersPageModule
 
   ],
   bootstrap: [IonicApp],
@@ -88,7 +97,10 @@ import {PlenaryViewPage} from "../pages/plenary-view/plenary-view";
     AttendancePage,
     EvaluatePaperPage,
     EvaluateEventPage,
-    PlenaryViewPage
+    PlenaryViewPage,
+    CommitteeListPage,
+    PastPresidentPage,
+    OfficersPage
   ],
   providers: [
     StatusBar,
