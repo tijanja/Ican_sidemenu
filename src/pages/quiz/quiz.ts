@@ -111,13 +111,16 @@ export class QuizPage implements OnInit {
     // console.log(question+" "+answer);
     //this.questionNumber = this.randomise(0,this.question.questionList.length);
     // this.dataContainer.nativeElement.innerHTML = "<h1>"+this.question.getQuestion(this.questionNumber)+"</h1>";
+    this.showLoader();
     let param = {controller:'ican',action:'submitAnswer',memberId:this.memberId,answer:answer,questionid:question};
 
       this.authService.uploadAnswer(param).then((result)=>{
         //console.log(result);
+        this.loading.dismiss();
         this.fetchQuestionFromReturnPromise(result);
         //this.getQuestion();
       },(err)=>{
+        this.loading.dismiss();
           console.log(err);
       });
 

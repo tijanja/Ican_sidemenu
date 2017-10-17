@@ -30,13 +30,22 @@ export class LoginComponent {
           this.data = result;
 
           //console.log(result);
-          localStorage.setItem('fname', this.data.fname);
-          localStorage.setItem('lname', this.data.lname);
-          localStorage.setItem('email', this.data.email);
-          localStorage.setItem('memberId', this.data.memberId);
-          localStorage.setItem('registrationNum', this.data.registrationNum);
-          localStorage.setItem('phone', this.data.phone);
-          this.navCtrl.pop();
+          if(this.data.action)
+          {
+            localStorage.setItem('fname', this.data.data.fname);
+            localStorage.setItem('lname', this.data.data.lname);
+            localStorage.setItem('email', this.data.data.email);
+            localStorage.setItem('memberId', this.data.data.memberId);
+            localStorage.setItem('registrationNum', this.data.data.registrationNum);
+            localStorage.setItem('phone', this.data.data.phone);
+
+            this.navCtrl.pop();
+          }
+          else
+          {
+            this.presentAlert("Invalid login details", "Please check and try again");
+          }
+
 
           //this.navCtrl.setRoot(TabsPage);
         },
