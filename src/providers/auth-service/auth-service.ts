@@ -3,7 +3,7 @@ import { Http, Headers } from '@angular/http';
 import 'rxjs/add/operator/map';
 import {Observable} from "rxjs/Observable";
 
-let apiUrl = 'http://34.241.5.192/api/';
+let apiUrl = '';
 
 @Injectable()
 export class AuthService {
