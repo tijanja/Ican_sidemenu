@@ -99,4 +99,65 @@ export class AuthService {
 
     });
   }
+
+  sendRating(rating)
+  {
+    return new Promise((resolve,reject)=>
+    {
+      let headers = new Headers();
+      headers.append('Content-Type', 'application/json');
+      this.remoteCall= this.http.post(apiUrl,JSON.stringify(rating),{headers: headers});
+
+      this.remoteCall.subscribe(
+        (data)=>
+        {
+          resolve(data.json())
+        },
+        (err)=>
+        {
+          reject(err)
+        });
+    });
+  }
+
+  markAttendance(attendance)
+  {
+    return new Promise((resolve,reject)=>
+    {
+      let headers = new Headers();
+      headers.append('Content-Type', 'application/json');
+      this.remoteCall= this.http.post(apiUrl,JSON.stringify(attendance),{headers: headers});
+
+      this.remoteCall.subscribe(
+        (data)=>
+        {
+          resolve(data.json())
+        },
+        (err)=>
+        {
+          reject(err)
+        });
+    });
+  }
+
+  shareQuizScore(memberid)
+  {
+    return new Promise((resolve,reject)=>
+    {
+      let headers = new Headers();
+      headers.append('Content-Type', 'application/json');
+      this.remoteCall= this.http.post(apiUrl,JSON.stringify(memberid),{headers: headers});
+
+      this.remoteCall.subscribe(
+        (data)=>
+        {
+          resolve(data.json())
+        },
+        (err)=>
+        {
+          reject(err)
+        });
+    });
+  }
+
 }

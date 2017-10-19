@@ -18,7 +18,7 @@
       </ion-col>
     </ion-row>
 
-    <ion-list style="background-color: #013116">
+    <ion-list id="menuList" style="background-color: #013116">
       <button class="menuBg" menuClose ion-item *ngFor="let p of pages" (click)="openPage(p)">
         <ion-icon name="{{p.icon}}"></ion-icon> {{p.title}}
       </button>

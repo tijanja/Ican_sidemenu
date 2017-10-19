@@ -1,5 +1,8 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams,Platform } from 'ionic-angular';
+import {
+  AlertController, IonicPage, LoadingController, NavController, NavParams, Platform,
+  ToastController
+} from 'ionic-angular';
 import {
   GoogleMaps,
   GoogleMap,
@@ -11,6 +14,7 @@ import {
 } from '@ionic-native/google-maps';
 import {Geofence} from "@ionic-native/geofence";
 import {Geolocation} from "@ionic-native/geolocation";
+import {AuthService} from "../../providers/auth-service/auth-service";
 
 /**
  * Generated class for the AttendancePage page.
@@ -33,17 +37,48 @@ export class AttendancePage {
   lat: number;
   lng: number;
 
+  memberId: string;
+
   latVenue: number = 6.581773;
   lngVenue: number = 3.280167;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams,private googleMaps: GoogleMaps,public geofence: Geofence,private geolocation: Geolocation,private platform: Platform)
+  attendanceData: any;
+  loading: any;
+  data: any;
+
+  constructor(public navCtrl: NavController, public navParams: NavParams,private googleMaps: GoogleMaps,public geofence: Geofence,private geolocation: Geolocation,private platform: Platform,public authService: AuthService, public loadingCtrl: LoadingController, public toastCtrl: ToastController,public alertCtrl: AlertController)
   {
-    this.geofence.initialize().then(()=>this.addGeoFence(),(err)=>console.log(err));
+    this.memberId = localStorage.getItem("memberId");
+    //this.geofence.initialize().then(()=>this.addGeoFence(),(err)=>console.log(err));
     this.getUserLocation(geolocation,platform);
   }
 
+  markAttendance()
+  {
+    this.showLoader();
+    this.attendanceData = {controller:"ican",action:"markAttendance",memberId:this.memberId}
+    this.authService.markAttendance(this.attendanceData).then((result)=>
+    {
+      this.loading.dismiss();
+      this.data = result;
+      if(this.data.action)
+      {
+        this.presentAlert("Done!",this.data.message);
+      }
+      else
+      {
+        this.presentAlert("Error!",this.data.message);
+      }
+
+    },(err)=>
+    {
+      this.loading.dismiss();
+      this.presentAlert("Network Error!","Please try again later.");
+    });
+  }
+
   ionViewDidLoad() {
-   // this.loadMap(); 6.5918133,3.3081222
+   this.loadMap(); //6.5918133,3.3081222
   }
 
   loadMap() {
@@ -126,5 +161,31 @@ export class AttendancePage {
       () => console.log('Geofence added'),
       (err) => console.log('Geofence failed to add')
     );
+  }
+
+  showLoader() {
+    this.loading = this.loadingCtrl.create({
+      content: 'Please wait...'
+    });
+
+    this.loading.present();
+  }
+
+  presentToast(msg) {
+    let toast = this.toastCtrl.create({
+      message: msg,
+      duration: 3000,
+      position: 'bottom',
+      dismissOnPageChange: true
+    });
+  }
+
+  presentAlert(title: string, message: string) {
+    const alert = this.alertCtrl.create({
+      title: title,
+      subTitle: message,
+      buttons: ['Dismiss']
+    });
+    alert.present();
   }
 }

@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import {AlertController, IonicPage, LoadingController, NavController, NavParams, ToastController} from 'ionic-angular';
+import {AuthService} from "../../providers/auth-service/auth-service";
 
 
 /**
@@ -16,12 +17,26 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class EvaluatePaperPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  rating: any;
+  constructor(public navCtrl: NavController, public navParams: NavParams,public authService: AuthService, public loadingCtrl: LoadingController, public toastCtrl: ToastController,public alertCtrl: AlertController) {
   }
 
-  onModelChange(event)
+  onModelChange(event,data)
   {
+    this.rating = {controller:"ican",action:"rateing",ratingValue:event,paperTitle:data};
+    this.ratePaper(this.rating);
+      //console.log(event+" "+data);
+  }
 
+  ratePaper(rateData: any)
+  {
+    this.authService.sendRating(rateData).then((result)=>
+    {
+      console.log(result);
+    },(err)=>
+    {
+      console.log(err);
+    });
   }
 
 }

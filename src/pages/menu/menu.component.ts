@@ -15,6 +15,7 @@ import {EvaluateEventPage} from "../evaluate-event/evaluate-event";
 import {CommitteeListPage} from "../committee-list/committee-list";
 import {PastPresidentPage} from "../past-president/past-president";
 import {OfficersPage} from "../officers/officers";
+import {ScoreBoardPage} from "../score-board/score-board";
 
 @Component({
   templateUrl: 'menu.html'
@@ -44,15 +45,17 @@ export class MenuComponent {
     this.phone = localStorage.getItem("phone");
 
     this.pages = [
-      { title: 'Welcome', component: HomePage,icon:'film' },
+      { title: 'Welcome', component: HomePage,icon:'ribbon' },
       { title: 'Conference Papers', component: ConferencePapersPage ,icon:'paper'},
       { title: 'Evaluate Papers', component:  EvaluatePaperPage,icon:'star'},
       { title: 'Conference Tv', component: ConferenceTvPage,icon:'desktop'},
       { title: 'Conference Quiz', component:  QuizPage,icon:'school'},
-      { title: 'Sponsors', component: SponsorsPage,icon:'people'},
-      { title: 'Officers & Council Members', component:  OfficersPage,icon:'star'},
-      { title: 'Past Presidents', component:  PastPresidentPage,icon:'pin'},
-      { title: 'Conference Committee', component:  CommitteeListPage,icon:'pin'}
+      { title: 'Sponsors', component: SponsorsPage,icon:'umbrella'},
+      { title: 'Officers & Council Members', component:  OfficersPage,icon:'people'},
+      { title: 'Past Presidents', component:  PastPresidentPage,icon:'people'},
+      { title: 'Conference Committee', component:  CommitteeListPage,icon:'people'},
+      { title: 'Mark Attendance', component:  AttendancePage,icon:'pin'},
+      { title: 'Quiz Score Board', component:  ScoreBoardPage,icon:'clipboard'}
     ];
 
   }

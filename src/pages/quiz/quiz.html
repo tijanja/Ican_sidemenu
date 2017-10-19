@@ -17,12 +17,25 @@
 
 
 <ion-content>
-  <div class="quiz-board">{{totalAnswered}}/{{totalQuestNumber}}</div>
-  <div class="container" padding><h1>{{seminalQuestion}}</h1></div>
+  <div class="quiz-board">
+    <ion-row>
+      <ion-col col-3 item-left class="score"><ion-row><img width="25" height="25" src="assets/ok.png"> {{numQustRight}}</ion-row><ion-row><img width="20" height="20" src="assets/error.png"> {{numQustWrong}}</ion-row></ion-col>
+      <ion-col col-9 item-right class="count">{{totalAnswered}}/{{totalQuestNumber}}</ion-col>
+    </ion-row>
+  </div>
+  <p>{{seminalQuestion}}</p>
 
-  <ion-list padding>
+
     <!--<ion-item class="answer" *ngFor="let answer of question.choiceAnserList[questionNumber]" (click)="getUpdate($event,answer,seminalQuestion)"><h3>{{answer}}</h3></ion-item>-->
-    <ion-item class="answer" *ngFor="let answer of option" (click)="getUpdate($event,answer,questionId)"><h3>{{answer}}</h3></ion-item>
+    <ion-item text-wrap *ngFor="let answer of option" (click)="getUpdate($event,answer,questionId)"><h5>{{answer.option}}</h5></ion-item>
+
+  <ion-row>
+    <ion-col col-1 class="sss"><img width="20" height="20" *ngIf="checkImage" src="{{image_src}}"></ion-col>
+    <ion-col col-11>{{result_of_question}}</ion-col>
+  </ion-row>
+  <ion-list>
+    <button ion-button block round [disabled]="isValid" (click)="buttonUpdate()">Go to next Question</button>
   </ion-list>
+
 
 </ion-content>

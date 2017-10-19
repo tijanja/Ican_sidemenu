@@ -9,7 +9,8 @@ declare let FCMPlugin;
 })
 export class HomePage {
 
-  constructor(public navCtrl: NavController,public fcm: FCM) {
+  constructor(public navCtrl: NavController,public fcm: FCM)
+  {
 
     if (typeof FCMPlugin != 'undefined') {
 

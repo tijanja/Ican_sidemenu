@@ -53,6 +53,8 @@ import {PastPresidentPage} from "../pages/past-president/past-president";
 import {OfficersPage} from "../pages/officers/officers";
 import {PastPresidentPageModule} from "../pages/past-president/past-president.module";
 import {OfficersPageModule} from "../pages/officers/officers.module";
+import {ScoreBoardPage} from "../pages/score-board/score-board";
+import {ScoreBoardPageModule} from "../pages/score-board/score-board.module";
 
 
 //import {Geolocation} from "@ionic-native/geolocation";
@@ -80,7 +82,8 @@ import {OfficersPageModule} from "../pages/officers/officers.module";
     PlenaryViewPageModule,
     CommitteeListPageModule,
     PastPresidentPageModule,
-    OfficersPageModule
+    OfficersPageModule,
+    ScoreBoardPageModule
 
   ],
   bootstrap: [IonicApp],
@@ -100,7 +103,8 @@ import {OfficersPageModule} from "../pages/officers/officers.module";
     PlenaryViewPage,
     CommitteeListPage,
     PastPresidentPage,
-    OfficersPage
+    OfficersPage,
+    ScoreBoardPage
   ],
   providers: [
     StatusBar,

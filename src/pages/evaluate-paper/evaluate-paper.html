@@ -19,66 +19,98 @@
 <ion-content>
   <ion-item-group>
     <ion-item-divider class="divider" color="light">PLENARY SESSION PAPERS</ion-item-divider>
-    <ion-item><h2>ICAN Accountability Index</h2> <h5>Reforming Public Finance Management for the Future</h5>
+    <ion-item text-wrap=""><h2>Plenary 1</h2> <h5>The Future of the Accountancy Profession</h5>
       <rating [(ngModel)]="rate1" readOnly="false" max="5"
               emptyStarIconName="star-outline"
               halfStarIconName="star-half"
               starIconName="star"
               nullable="false"
-              (ngModelChange)="onModelChange($event)"></rating>
+              (ngModelChange)="onModelChange($event,'The Future of the Accountancy Profession')"></rating>
     </ion-item>
-    <ion-item><h2>Nigeria</h2><div><h5> The Future of Work and Youth Unemployment</h5></div>
+    <ion-item text-wrap=""><h2>Plenary 2</h2><div><h5>ICAN Accountability Index Reforming Public Finance Management for the Future</h5></div>
       <rating [(ngModel)]="rate2" readOnly="false" max="5"
               emptyStarIconName="star-outline"
               halfStarIconName="star-half"
               starIconName="star"
               nullable="false"
-              (ngModelChange)="onModelChange($event)"></rating>
+              (ngModelChange)="onModelChange($event,'ICAN Accountability Index Reforming Public Finance Management for the Future')"></rating>
+    </ion-item>
+    <ion-item><h2>Plenary 3</h2><div><h5> The Future of Work and Youth Unemployment</h5></div>
+      <rating [(ngModel)]="rate3" readOnly="false" max="5"
+              emptyStarIconName="star-outline"
+              halfStarIconName="star-half"
+              starIconName="star"
+              nullable="false"
+              (ngModelChange)="onModelChange($event,'The Future of Work and Youth Unemployment')"></rating>
+    </ion-item>
+    <ion-item text-wrap=""><h2>Plenary 4</h2><div><h5>Cybersecurity: What Chartered Accountants Need To Know</h5></div>
+      <rating [(ngModel)]="rate4" readOnly="false" max="5"
+              emptyStarIconName="star-outline"
+              halfStarIconName="star-half"
+              starIconName="star"
+              nullable="false"
+              (ngModelChange)="onModelChange($event,'Cybersecurity: What Chartered Accountants Need To Know')"></rating>
+    </ion-item>
+    <ion-item><h2>Plenary 5</h2><div><h5>Cancer And Its Early Detection</h5></div>
+      <rating [(ngModel)]="rate5" readOnly="false" max="5"
+              emptyStarIconName="star-outline"
+              halfStarIconName="star-half"
+              starIconName="star"
+              nullable="false"
+              (ngModelChange)="onModelChange($event,'Cancer And Its Early Detection')"></rating>
+    </ion-item>
+    <ion-item><h2>Pleanary 6</h2><div><h5>YOUNG PROFESSIONALS: EMERGING LEADERS OF CHANGE AND NATION BUILDING</h5></div>
+      <rating [(ngModel)]="rate6" readOnly="false" max="5"
+              emptyStarIconName="star-outline"
+              halfStarIconName="star-half"
+              starIconName="star"
+              nullable="false"
+              (ngModelChange)="onModelChange($event,'YOUNG PROFESSIONALS: EMERGING LEADERS OF CHANGE AND NATION BUILDING')"></rating>
     </ion-item>
   </ion-item-group>
 
 
   <ion-item-group>
     <ion-item-divider color="light">WORKSHOP PAPERS</ion-item-divider>
-    <ion-item><h2>Integrated Reporting</h2><h5>The Future of Corporate Reporting</h5>
-      <rating [(ngModel)]="rate3" readOnly="false" max="5"
-              emptyStarIconName="star-outline"
-              halfStarIconName="star-half"
-              starIconName="star"
-              nullable="false"
-              (ngModelChange)="onModelChange($event)"></rating>
-    </ion-item>
-    <ion-item><h2>Islamic Finance</h2> <h5>Global Trends and Potentials for Chartered Accountants</h5>
-      <rating [(ngModel)]="rate4" readOnly="false" max="5"
-              emptyStarIconName="star-outline"
-              halfStarIconName="star-half"
-              starIconName="star"
-              nullable="false"
-              (ngModelChange)="onModelChange($event)"></rating>
-    </ion-item>
-    <ion-item><h2>Cyber Security</h2> <h5>What Chartered Accountants Need to Know</h5>
-      <rating [(ngModel)]="rate5" readOnly="false" max="5"
-              emptyStarIconName="star-outline"
-              halfStarIconName="star-half"
-              starIconName="star"
-              nullable="false"
-              (ngModelChange)="onModelChange($event)"></rating>
-    </ion-item>
-    <ion-item><h2>Technological Disruptions & their Impact on the Accounting Profession</h2>
-      <rating [(ngModel)]="rate6" readOnly="false" max="5"
-              emptyStarIconName="star-outline"
-              halfStarIconName="star-half"
-              starIconName="star"
-              nullable="false"
-              (ngModelChange)="onModelChange($event)"></rating>
-    </ion-item>
-    <ion-item><h2>Young Professionals</h2><h5> Emerging Leaders of Change and Nation Building</h5>
+    <ion-item><h2>Workshop 1</h2><h5>Integrated Reporting The Future of Corporate Reporting</h5>
       <rating [(ngModel)]="rate7" readOnly="false" max="5"
               emptyStarIconName="star-outline"
               halfStarIconName="star-half"
               starIconName="star"
               nullable="false"
-              (ngModelChange)="onModelChange($event)"></rating>
+              (ngModelChange)="onModelChange($event,'Integrated Reporting The Future of Corporate Reporting')"></rating>
     </ion-item>
+    <ion-item><h2>Workshop 2</h2> <h5>Islamic Finance Global Trends and Potentials for Chartered Accountants</h5>
+      <rating [(ngModel)]="rate8" readOnly="false" max="5"
+              emptyStarIconName="star-outline"
+              halfStarIconName="star-half"
+              starIconName="star"
+              nullable="false"
+              (ngModelChange)="onModelChange($event,'Islamic Finance Global Trends and Potentials for Chartered Accountants')"></rating>
+    </ion-item>
+    <!--<ion-item><h2>Cyber Security</h2> <h5>What Chartered Accountants Need to Know</h5>-->
+      <!--<rating [(ngModel)]="rate5" readOnly="false" max="5"-->
+              <!--emptyStarIconName="star-outline"-->
+              <!--halfStarIconName="star-half"-->
+              <!--starIconName="star"-->
+              <!--nullable="false"-->
+              <!--(ngModelChange)="onModelChange($event)"></rating>-->
+    <!--</ion-item>-->
+    <!--<ion-item><h2>Technological Disruptions & their Impact on the Accounting Profession</h2>-->
+      <!--<rating [(ngModel)]="rate6" readOnly="false" max="5"-->
+              <!--emptyStarIconName="star-outline"-->
+              <!--halfStarIconName="star-half"-->
+              <!--starIconName="star"-->
+              <!--nullable="false"-->
+              <!--(ngModelChange)="onModelChange($event)"></rating>-->
+    <!--</ion-item>-->
+    <!--<ion-item><h2>Young Professionals</h2><h5> Emerging Leaders of Change and Nation Building</h5>-->
+      <!--<rating [(ngModel)]="rate7" readOnly="false" max="5"-->
+              <!--emptyStarIconName="star-outline"-->
+              <!--halfStarIconName="star-half"-->
+              <!--starIconName="star"-->
+              <!--nullable="false"-->
+              <!--(ngModelChange)="onModelChange($event)"></rating>-->
+    <!--</ion-item>-->
   </ion-item-group>
 </ion-content>
