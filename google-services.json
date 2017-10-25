@@ -1,0 +1,124 @@
+{
+  "project_info": {
+    "project_number": "579932681254",
+    "firebase_url": "https://lex-nigeriana.firebaseio.com",
+    "project_id": "lex-nigeriana",
+    "storage_bucket": "lex-nigeriana.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:579932681254:android:f7962828742c1265",
+        "android_client_info": {
+          "package_name": "teetech.com.lex_nigeriana"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "579932681254-c98rutkapnqatac37n7djlquqpuv8nl5.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "teetech.com.lex_nigeriana",
+            "certificate_hash": "af64d84d944ddc9f99c6124e68dbadb8a0bbf7d3"
+          }
+        },
+        {
+          "client_id": "579932681254-f13sgs7p0frhrlfhjpgcpvqflei2p2a3.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAE1xDOrWskYuT7Kw72CsW3cNrK58_pcs4"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "579932681254-0mtpspkl4mlnjj1lgbmdhsdckpjk2c5k.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.teetech.ican"
+              }
+            },
+            {
+              "client_id": "579932681254-f13sgs7p0frhrlfhjpgcpvqflei2p2a3.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:579932681254:android:4811e2a98516dcba",
+        "android_client_info": {
+          "package_name": "com.teetech.ican"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "579932681254-f13sgs7p0frhrlfhjpgcpvqflei2p2a3.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAE1xDOrWskYuT7Kw72CsW3cNrK58_pcs4"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:579932681254:android:5f30f13a5f0461c3",
+        "android_client_info": {
+          "package_name": "tunji.ican"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "579932681254-f13sgs7p0frhrlfhjpgcpvqflei2p2a3.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAE1xDOrWskYuT7Kw72CsW3cNrK58_pcs4"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

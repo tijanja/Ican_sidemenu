@@ -1,0 +1,29 @@
+<!--
+  Generated template for the PastPresidentPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar color="primary">
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Past presidents</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <ion-item text-wrap *ngFor="let president_asso of presidents_asso">
+      <h2>{{president_asso.name}}</h2>
+    <h6><small>{{president_asso.duration}}</small></h6>
+  </ion-item>
+
+  <ion-item text-wrap *ngFor="let president of presidents_chart">
+    <h2>{{president.name}}</h2>
+    <h6><small>{{president.duration}}</small></h6>
+  </ion-item>
+</ion-content>

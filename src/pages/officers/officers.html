@@ -1,0 +1,40 @@
+<!--
+  Generated template for the OfficersPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar color="primary">
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Officers & Council Members</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content>
+  <ion-item-group>
+    <ion-item-divider color="light"><ion-icon name="people"></ion-icon> Officers</ion-item-divider>
+    <ion-item text-wrap *ngFor="let officer of officers">
+      <ion-avatar item-start>
+        <img src="{{officer.image}}">
+      </ion-avatar>
+      <h2><b>{{officer.name}}</b></h2>
+      <h4>{{officer.a}}</h4>
+      <h6><small>{{officer.position}}</small></h6>
+    </ion-item>
+  </ion-item-group>
+
+  <ion-item-group>
+    <ion-item-divider color="light"><ion-icon name="people"></ion-icon> Council Members</ion-item-divider>
+    <ion-item text-wrap *ngFor="let member of members">
+      <h2><b>{{member.name}}</b></h2>
+      <h6><small>{{member.d}}</small></h6>
+    </ion-item>
+  </ion-item-group>
+
+</ion-content>
