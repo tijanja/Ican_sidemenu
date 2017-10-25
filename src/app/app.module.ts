@@ -26,15 +26,6 @@ import {LoginComponent} from "./login/login.component";
 import {YoutubePipe} from "../pipes/youtube/youtube";
 import {AttendancePage} from "../pages/attendance/attendance";
 import {EvaluatePaperPage} from "../pages/evaluate-paper/evaluate-paper";
-import {
-  GoogleMaps,
-  GoogleMap,
-  GoogleMapsEvent,
-  GoogleMapOptions,
-  CameraPosition,
-  MarkerOptions,
-  Marker
-} from '@ionic-native/google-maps';
 import {EvaluateEventPage} from "../pages/evaluate-event/evaluate-event";
 import {AttendancePageModule} from "../pages/attendance/attendance.module";
 import {ConferencePapersPageModule} from "../pages/conference-papers/conference-papers.module";
@@ -55,6 +46,7 @@ import {PastPresidentPageModule} from "../pages/past-president/past-president.mo
 import {OfficersPageModule} from "../pages/officers/officers.module";
 import {ScoreBoardPage} from "../pages/score-board/score-board";
 import {ScoreBoardPageModule} from "../pages/score-board/score-board.module";
+import {DocumentViewer} from "@ionic-native/document-viewer";
 
 
 //import {Geolocation} from "@ionic-native/geolocation";
@@ -111,9 +103,9 @@ import {ScoreBoardPageModule} from "../pages/score-board/score-board.module";
     SplashScreen,
     Geofence,
     Geolocation,
-    GoogleMaps,
     YoutubeVideoPlayer,
     FCM,
+    DocumentViewer,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     AuthService
   ]

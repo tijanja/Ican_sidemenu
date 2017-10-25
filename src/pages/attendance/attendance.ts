@@ -3,15 +3,6 @@ import {
   AlertController, IonicPage, LoadingController, NavController, NavParams, Platform,
   ToastController
 } from 'ionic-angular';
-import {
-  GoogleMaps,
-  GoogleMap,
-  GoogleMapsEvent,
-  GoogleMapOptions,
-  CameraPosition,
-  MarkerOptions,
-  Marker
-} from '@ionic-native/google-maps';
 import {Geofence} from "@ionic-native/geofence";
 import {Geolocation} from "@ionic-native/geolocation";
 import {AuthService} from "../../providers/auth-service/auth-service";
@@ -30,7 +21,6 @@ import {AuthService} from "../../providers/auth-service/auth-service";
 })
 export class AttendancePage {
 
-  map: GoogleMap;
   mapElement: HTMLElement;
 
   title: string = 'ICAN 47th Annual Conference Attendance';
@@ -46,7 +36,7 @@ export class AttendancePage {
   loading: any;
   data: any;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams,private googleMaps: GoogleMaps,public geofence: Geofence,private geolocation: Geolocation,private platform: Platform,public authService: AuthService, public loadingCtrl: LoadingController, public toastCtrl: ToastController,public alertCtrl: AlertController)
+  constructor(public navCtrl: NavController, public navParams: NavParams,public geofence: Geofence,private geolocation: Geolocation,private platform: Platform,public authService: AuthService, public loadingCtrl: LoadingController, public toastCtrl: ToastController,public alertCtrl: AlertController)
   {
     this.memberId = localStorage.getItem("memberId");
     //this.geofence.initialize().then(()=>this.addGeoFence(),(err)=>console.log(err));
@@ -78,49 +68,10 @@ export class AttendancePage {
   }
 
   ionViewDidLoad() {
-   this.loadMap(); //6.5918133,3.3081222
+   //this.loadMap(); //6.5918133,3.3081222
   }
 
-  loadMap() {
-    this.mapElement = document.getElementById('map');
 
-    let mapOptions: GoogleMapOptions = {
-      camera: {
-        target: {
-          lat: 6.5918133,
-          lng: 3.3081222
-        },
-        zoom: 16,
-        tilt: 30
-      }
-    };
-
-    this.map = this.googleMaps.create(this.mapElement, mapOptions);
-
-    // Wait the MAP_READY before using any methods.
-    this.map.one(GoogleMapsEvent.MAP_READY)
-      .then(() => {
-        console.log('Map is ready!');
-
-        // Now you can use all methods safely.
-        this.map.addMarker({
-          title: '47th Annual Conference Venue\n [Click here mark attendance]',
-          icon: 'orange',
-          animation: 'DROP',
-          position: {
-            lat: 6.5918133,
-            lng: 3.3081222
-          }
-        })
-          .then(marker => {
-            marker.on(GoogleMapsEvent.MARKER_CLICK)
-              .subscribe(() => {
-                //alert('clicked');
-              });
-          });
-
-      });
-  }
 
   getUserLocation( geolocation: Geolocation,platform: Platform)
   {

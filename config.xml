@@ -95,13 +95,10 @@
     <plugin name="cordova-plugin-whitelist" spec="^1.3.2" />
     <plugin name="ionic-plugin-keyboard" spec="^2.2.1" />
     <plugin name="cordova-android-play-services-gradle-release" spec="^1.1.1">
-        <variable name="PLAY_SERVICES_VERSION" value="11.+" />
+        <variable name="PLAY_SERVICES_VERSION" value="9.0.0" />
     </plugin>
-    <plugin name="cordova-plugin-fcm" spec="^2.1.2" />
-    <plugin name="cordova-plugin-googlemaps" spec="~2.0.11">
-        <variable name="API_KEY_FOR_ANDROID" value="'AIzaSyA1evzZcK1SHuE2ZyAfPKKmP5UhwXmyi84'" />
-        <variable name="API_KEY_FOR_IOS" value="'AIzaSyCrgGi2546zX_0x0pg8p483mzZqXAc-4XM'" />
-    </plugin>
-    <engine name="android" spec="~6.1.2" />
     <allow-navigation href="http://169.254.80.80:8101" />
+    <engine name="android" spec="~6.1.2" />
+    <plugin name="cordova-plugin-document-viewer" spec="~0.9.5" />
+    <allow-navigation href="http://192.168.1.2:8101" />
 </widget>
