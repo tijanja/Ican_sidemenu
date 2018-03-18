@@ -47,6 +47,7 @@ import {OfficersPageModule} from "../pages/officers/officers.module";
 import {ScoreBoardPage} from "../pages/score-board/score-board";
 import {ScoreBoardPageModule} from "../pages/score-board/score-board.module";
 import {DocumentViewer} from "@ionic-native/document-viewer";
+import {PdfViewerModule} from "ng2-pdf-viewer";
 
 
 //import {Geolocation} from "@ionic-native/geolocation";
@@ -75,7 +76,8 @@ import {DocumentViewer} from "@ionic-native/document-viewer";
     CommitteeListPageModule,
     PastPresidentPageModule,
     OfficersPageModule,
-    ScoreBoardPageModule
+    ScoreBoardPageModule,
+    PdfViewerModule
 
   ],
   bootstrap: [IonicApp],

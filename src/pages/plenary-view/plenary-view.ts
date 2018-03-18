@@ -1,6 +1,10 @@
 import { Component } from '@angular/core';
 import {IonicPage, NavController, NavParams, ToastController, ViewController} from 'ionic-angular';
 import {DocumentViewer, DocumentViewerOptions} from "@ionic-native/document-viewer";
+import {PictureBlogPage} from "../picture-blog/picture-blog";
+import {DomSanitizer} from "@angular/platform-browser";
+
+
 
 /**
  * Generated class for the PlenaryViewPage page.
@@ -19,17 +23,23 @@ export class PlenaryViewPage {
   plenary: string;
   title: string;
   synopsis: string;
+  pdfLink:any;
   options: DocumentViewerOptions =  {
     title: this.title
   };
 
 
-  constructor(public navCtrl: NavController, public navParams: NavParams,private docViewer:DocumentViewer,public toastCtrl:ToastController)
+  constructor(public navCtrl: NavController, public navParams: NavParams,private docViewer:DocumentViewer,public toastCtrl:ToastController,private sanitizer: DomSanitizer)
   {
     this.plenary = this.navParams.get("plenary");
     this.title = this.navParams.get("title");
     this.synopsis = this.navParams.get("synopsis");
 
+  }
+
+  goToPDFView()
+  {
+    this.navCtrl.push(PictureBlogPage);
   }
 
   ionViewDidLoad()
@@ -40,7 +50,10 @@ export class PlenaryViewPage {
       {
         installer();
       }
-    },()=>{},(error)=>
+    },()=>
+    {
+      this.presentToast("this is impossible");
+    },(error)=>
     {
       this.presentToast(error.toString());
     });
@@ -48,7 +61,9 @@ export class PlenaryViewPage {
 
   readDoc()
   {
-    this.docViewer.viewDocument('assets/aa.pdf', 'application/pdf', this.options,()=>{},()=>{},(diviceId,installer)=>{installer()},(error)=>{ this.presentToast(error.toString());});
+    //this.docViewer.viewDocument('assets/aa.pdf', 'application/pdf', this.options,()=>{},()=>{},(diviceId,installer)=>{installer()},(error)=>{ this.presentToast(error.toString());});
+
+    this.pdfLink = this.sanitizer.bypassSecurityTrustResourceUrl("http://www.tutorialspoint.com/java/java_tutorial.pdf");
   }
 
   presentToast(msg) {

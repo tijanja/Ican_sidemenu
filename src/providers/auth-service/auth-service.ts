@@ -3,7 +3,9 @@ import { Http, Headers } from '@angular/http';
 import 'rxjs/add/operator/map';
 import {Observable} from "rxjs/Observable";
 
-let apiUrl = 'http://34.241.5.192/api/';
+//let apiUrl = 'http://34.241.5.192/api/';
+//let apiUrl = 'http://35.226.220.222/api/';
+let apiUrl = 'http://34.253.106.246/api/';
 
 @Injectable()
 export class AuthService {
@@ -16,14 +18,14 @@ export class AuthService {
       let headers = new Headers();
       headers.append('Content-Type', 'application/json');
 
-      this.remoteCall = this.http.post(apiUrl, JSON.stringify(credentials), {headers: headers});
-      //this.remoteCall = this.http.post(apiUrl, JSON.stringify(credentials));
+      // this.remoteCall = this.http.post(apiUrl, JSON.stringify(credentials), {headers: headers});
+      this.remoteCall = this.http.post(apiUrl, JSON.stringify(credentials));
       this.remoteCall.subscribe(data =>
         {
-          let a = data.json();
-          resolve(a.data);
+          //let a = data.json();
+          //resolve(a.data);
 
-          //console.log(data);
+          console.log(data);
         },
         (err) =>
         {

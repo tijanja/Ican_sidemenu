@@ -21,46 +21,48 @@ export class LoginComponent {
   }
 
   doLogin() {
-    if(this.loginData.username.trim().length!=0 && this.loginData.password.trim().length!=0)
-    {
-      this.showLoader();
-      this.authService.login(this.loginData).then((result) =>
-        {
-          this.loading.dismiss();
-          this.data = result;
+    // if(this.loginData.username.trim().length!=0 && this.loginData.password.trim().length!=0)
+    // {
+    //   this.showLoader();
 
-          //console.log(result);
-          if(this.data.action)
-          {
-            localStorage.setItem('fname', this.data.data.fname);
-            localStorage.setItem('lname', this.data.data.lname);
-            localStorage.setItem('email', this.data.data.email);
-            localStorage.setItem('memberId', this.data.data.memberId);
-            localStorage.setItem('registrationNum', this.data.data.registrationNum);
-            localStorage.setItem('phone', this.data.data.phone);
-
-            this.navCtrl.pop();
-          }
-          else
-          {
-            this.presentAlert("Invalid login details", "Please check and try again");
-          }
+    //   this.authService.login(this.loginData).then((result) =>
+    //     {
+    //       console.log(result);
+    //       this.loading.dismiss();
+    //       this.data = result;
 
 
-          //this.navCtrl.setRoot(TabsPage);
-        },
-        (err) => {
-          this.loading.dismiss();
-          this.presentAlert("Connection Error","Please try again later");
+    //       if(this.data.action)
+    //       {
+    //         localStorage.setItem('fname', this.data.data.fname);
+    //         localStorage.setItem('lname', this.data.data.lname);
+    //         localStorage.setItem('email', this.data.data.email);
+    //         localStorage.setItem('memberId', this.data.data.memberId);
+    //         localStorage.setItem('registrationNum', this.data.data.registrationNum);
+    //         localStorage.setItem('phone', this.data.data.phone);
 
-        });
-    }
-    else
-    {
-      this.presentAlert("Login Error", "Invalid login details");
-    }
+    //         this.navCtrl.pop();
+    //       }
+    //       else
+    //       {
+    //         this.presentAlert("Invalid login details", "Please check and try again");
+    //       }
 
-    //this.navCtrl.pop();
+
+    //       //this.navCtrl.setRoot(TabsPage);
+    //     },
+    //     (err) => {
+    //       this.loading.dismiss();
+    //       this.presentAlert("Connection Error","Please try again later");
+
+    //     });
+    // }
+    // else
+    // {
+    //   this.presentAlert("Login Error", "Invalid login details");
+    // }
+
+    this.navCtrl.pop();
   }
 
   showLoader(){
